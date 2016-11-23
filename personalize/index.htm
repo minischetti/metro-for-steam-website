@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon.png" type="image/png">
+		<title>Metro | Personalize</title>
+		<script type="text/javascript" src='code.js'></script>
+		<script type="text/javascript" src='colorpicker.js'></script>
+		<link rel="stylesheet" type="text/css" href="page.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
+	<body>
+		<nav>
+      <a href="/">Metro</a>
+      <div class="links">
+        <a class="logo sm alert" href="featured/keepitonthedl"><img src="../assets/bell.svg"></a>
+        <a class="logo sm" href="personalize"><img src="../assets/brush.svg"></a>
+        <a href="../downloads/latest.zip" class="download">Download</a>
+      </div>
+    </nav>
+		<div hidden id='popupContainer'>
+			<div id='popup-inner'>
+			<div hidden id='colorPickerPopup' class='popupDiv'>
+				<div class='horizontal'>
+					<div id='colorPicker-stack' class='colorPicker-stack'>
+						<div id='colorPicker-cursor' class='colorPicker-cursor'></div>
+						<div id='colorPicker-saturation' class='colorPicker-saturation'></div>
+						<div id='colorPicker-hue' class='colorPicker-hue'></div>
+					</div>
+					<div id='colorPicker-satStack' class='colorPicker-satStack'>
+						<div id='colorPicker-saturation-slider' class='colorPicker-saturation-slider'></div>
+					</div>
+					<div id='colorPicker-textboxContainer'>
+						<input id='colorPicker-hexTextbox' class='hex-textbox' placeholder='#' maxlength='6'/>
+						<div class='multiple-textboxes'>
+							<input id='colorPicker-rgbR-textbox' class='rgb-r-textbox' placeholder='R' maxlength='3' max='255' type='number'/>
+							<input id='colorPicker-rgbG-textbox' class='rgb-b-textbox' placeholder='G' maxlength='3' max='255' type='number'/>
+							<input id='colorPicker-rgbB-textbox' class='rgb-g-textbox' placeholder='B' maxlength='3' max='255' type='number'/>
+						</div>
+						<div class='multiple-textboxes'>
+							<input id='colorPicker-hslH-textbox' class='hsl-h-textbox' placeholder='H' maxlength='3' max='360' type='number'/>
+							<input id='colorPicker-hslS-textbox' class='hsl-s-textbox' placeholder='S' maxlength='3' max='100' type='number'/>
+							<input id='colorPicker-hslL-textbox' class='hsl-l-textbox' placeholder='L' maxlength='3' max='100' type='number'/>
+						</div>
+						<div id='colorPicker-preview'></div>
+						<div id='colorPicker-dlgbuttons' class='flex'>
+							<button id='colorPicker-okButton' onclick='picker.acceptDlg()' class='button maxWidth inverted'>OK</button>
+							<button id='colorPicker-cancelButton' onclick='closePopup()' class='button maxWidth inverted'>Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div hidden id='downloadFilePopup' class='popupDiv'>
+				<!--<button id='popupClose-button' class='back-button' onclick='closePopup()'></button>-->
+				<p class='inverted'>
+					Your preset is ready
+					<img class='close-button' src='resources/tabclose.png' alt="" onclick='closePopup()'/>
+				</p>
+				<div class='normal-font inverted detail justify'>
+					Move <span class='bold'>custom.styles</span> to <span class='bold'>Steam\skins\Metro for Steam</span>and restart Steam for the changes to take effect.
+				</div>
+				<a class='inverted' id='savepreset-button' download="custom.styles" href=""><img src="resources/download.png" alt=""/></a>
+			</div>
+			</div>
+		</div>
+		<noscript>
+			<p>This site requires JavaScript to function.</p>
+		</noscript>
+		<div id='main-container'>
+			<div>
+				<p>Accent color</p>
+				<div id='colorContainer'></div>
+				<button id='customColorButton' class='button' onclick='openPopup("colorPickerPopup")'>Custom…</button>
+			</div>
+			<div>
+				<p>Font</p>
+				<div id='fontList'></div>
+			</div>
+            <div>
+                <p>Grid view</p>
+                When a game is not installed:
+                <div class="center-vertical">
+                    <button class="checkbox" id="uinstalledIndicator" checked="true">Display an indicator icon</button>
+                </div>
+                <div class="center-vertical">
+                    <button class="checkbox" id="uninstalledDimming">Dim the art</button>
+                </div>
+            </div>
+			<div>
+				<p>Decal</p>
+				<div id='decalContainer'></div>
+			</div>
+			<div>
+				<button id='save-button' class='button' onclick='compileStyles()'>Save</button>
+			</div>
+		</div>
+	</body>
+</html>

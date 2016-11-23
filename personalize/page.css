@@ -1,0 +1,595 @@
+@font-face
+{
+	font-family: "Segoe UI Light";
+	src: local("Segoe UI Semilight"), local("Segoe UI Light"), local("Segoe UI"), local("HelveticaNeue-Light"), local("Ubuntu Light"), local("arial"), local("sans-serif");
+}
+
+@font-face
+{
+	font-family: "Segoe UI";
+	src: local("Segoe UI"), local("HelveticaNeue"), local("Ubuntu"), local("arial"), local("sans-serif");
+}
+
+p
+{
+	color: #85969B;
+	font-size: 20px;
+	margin: 12px 0;
+	padding: 0;
+}
+
+body
+{
+	font-family: "Segoe UI Light";
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.flex
+{
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.maxWidth
+{
+	width: 100%;
+}
+
+#popupContainer
+{
+	position: fixed;
+	padding: 0;
+	margin: 0;
+}
+
+#popupContainer
+{
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,.3);
+}
+
+#popupContainer:not([hidden])
+{
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main-container
+{
+	padding: 80px 24px 0;
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+    -webkit-justify-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+#main-container > div
+{
+	min-width: 482px;
+	max-width: 482px;
+}
+
+#main-container  > div:last-child::before
+{
+	content: "";
+	display: block;
+	height: 1px;
+	margin: 8px 0 6px;
+	background: #eee;
+}
+
+.horizontal
+{
+	width: 100%;
+	display: inline-block;
+}
+/*
+body > div:nth-child(even)
+{
+	background-color: #eee;
+}*/
+
+.accentColor-div
+{
+	float: left;
+	height: 32px;
+	width: 40px;
+	background: top right no-repeat;
+}
+
+.accentColor-div:not([selected]):hover
+{
+	opacity: .8;
+}
+
+.accentColor-div[selected]
+{
+	background-image: url(resources/check-right-small.png);
+}
+
+.button
+{
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	min-width: 85px;
+	background: #E0E0E0;
+	border: 0;
+	padding: 7px 4px;
+	margin: 8px 0 0;
+	text-decoration: none;
+	color: #000;
+	cursor: default;
+	outline: 0;
+}
+
+.button[disabled]
+{
+	opacity: .6;
+}
+
+.button:not([disabled]):hover
+{
+	background: #C2C2C2;
+}
+
+.button:not([disabled]):hover:active
+{
+	color: #fff;
+	background: #000;
+}
+
+.button.inverted
+{
+
+	background: rgba(255,255,255,.3);
+	box-shadow: 0 0 0 2px #fff inset;
+}
+
+.button.inverted:hover
+{
+	background-color: rgba(255,255,255,.5);
+}
+
+.button.inverted:hover:active
+{
+	background: #fff;
+	color: #000;
+}
+
+.button[selected]
+{
+	box-shadow: 0 0 0 2px #E18F32 inset;
+}
+
+#decalContainer
+{
+	width: auto;
+}
+
+.decal-div
+{
+	float: left;
+	height: 50px;
+	width: 50px;
+	margin: 0 4px 0 0;
+}
+
+.decal-div:not([selected]):hover
+{
+	opacity: .8;
+}
+
+.decal-div[selected]::before
+{
+	height: 50px;
+	width: 50px;
+	content: "";
+	float: left;
+	background: center center no-repeat url(resources/circlecheck.png);
+}
+
+.decal-div:last-child
+{
+	margin-right: 0;
+}
+
+.decal0
+{
+	background-image: url(resources/decal_0.png);
+}
+.decal1
+{
+	background-image: url(resources/decal_1.png);
+}
+.decal2
+{
+	background-image: url(resources/decal_2.png);
+}
+.decal3
+{
+	background-image: url(resources/decal_3.png);
+}
+.decal4
+{
+	background-image: url(resources/decal_4.png);
+}
+.decal5
+{
+	background-image: url(resources/decal_5.png);
+}
+.decal6
+{
+	background-image: url(resources/decal_6.png);
+}
+.decal7
+{
+	background-image: url(resources/decal_7.png);
+}
+
+.decal8
+{
+	background: #101010;
+}
+
+.inverted
+{
+	color: #fff;
+}
+
+p.detail
+{
+	font-size: 11pt;
+}
+
+.bold
+{
+	text-decoration: underline;
+	padding: 0 8px;
+}
+
+#popup-inner
+{
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+    -webkit-justify-content: center;
+    align-items: center;
+    justify-content: center;
+	background: #E18F32;
+}
+
+.popupDiv
+{
+	width: auto;
+	padding: 8px 0 4px;
+	min-height: 180px;
+}
+
+.popupDiv .horizontal > *
+{
+	float: left;
+}
+
+.back-button
+{
+	-moz-appearance: none;
+	border: 0;
+	height: 26px;
+	width: 26px;
+	background: url(resources/back.png) center center no-repeat;
+}
+
+.float-right
+{
+	float: right;
+}
+
+/* ::: Color Picker popup ::: */
+
+#colorPickerPopup > .horizontal
+{
+	width: auto;
+}
+
+#colorPicker-preview
+{
+	margin: 7px 0 0;
+	height: 100px;
+	width: auto;
+	border: 2px solid #fff;
+}
+
+.colorPicker-hue,
+.colorPicker-saturation
+{
+	position: absolute;
+	height: 360px;
+	width: 360px;
+	margin: 7px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.colorPicker-hue
+{
+	cursor: url(colorpicker/picker-cursor.png) 7 7, default;
+	z-index: 0;
+	background-image: url(colorpicker/picker-bg-small.png);
+	box-shadow: 0 0 0 2px #fff;
+}
+
+.colorPicker-saturation
+{
+	pointer-events: none;
+	z-index: 1;
+	background-image: url(colorpicker/picker-bg-small-unsat.png);
+	opacity: .5;
+}
+
+.colorPicker-cursor
+{
+	position: absolute;
+	pointer-events: none;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	background: url(colorpicker/picker-cursor.png) no-repeat;
+}
+
+.colorPicker-stack
+{
+	position: relative;
+	/*display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+	height: 374px;
+	width: 374px;
+}
+
+.colorPicker-satStack,
+.colorPicker-opacityStack
+{
+	position: relative;
+	height: 374px;
+	padding: 0 11px;
+	width: 43px;
+    background-image: url(colorpicker/slider-thumb.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.colorPicker-satStack[dragging],
+.colorPicker-opacityStack[dragging]
+{
+
+}
+
+.colorPicker-saturation-slider,
+.colorPicker-opacity-slider
+{
+	position: absolute;
+	height: 360px;
+	width: 360px;
+	margin: 7px 12px;
+	pointer-events: none;
+	width: 18px;
+	box-shadow: 0 0 0 2px #fff;
+}
+
+#colorPicker-okButton
+{
+	margin-right: 3px;
+}
+
+#colorPicker-cancelButton
+{
+	margin-left: 3px;
+}
+
+#friendslist-message
+{
+	min-height: 108px;
+	background: url(resources/friendslistoptions.png) no-repeat;
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+}
+
+#friendslist-message > p
+{
+	font-family: "Segoe UI";
+	color: #fff;
+	background: rgba(0,0,0,.5);
+	font-size: 12pt;
+	padding: 8px;
+	text-align: justify;
+}
+
+.normal-font
+{
+	font-family: "Segoe UI";
+}
+
+#savepreset-button > img
+{
+	margin-top: 16px;
+}
+
+#savepreset-button:hover > img
+{
+	border-radius: 100%;
+	background: rgba(255,255,255,.15);
+}
+
+#fontList
+{
+	height: 150px;
+	overflow-y: auto;
+	border: 1px solid #DEDEDE;
+}
+
+.font
+{
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	background: none;
+	border: 0;
+	width: 100%;
+	text-align: left;
+	padding: 4px 6px 5px;
+	margin: 0;
+	font-size: 11pt;
+	outline: 0;
+}
+
+.font:hover
+{
+	background: #DEDEDE;
+}
+
+.font[selected]
+{
+	background: #C2C2C2;
+}
+
+noscript > p
+{
+	text-align: center;
+	margin: 0;
+	background: #E18F32;
+	padding: 8px;
+	color: #fff;
+}
+
+#save-button
+{
+	float: right;
+}
+
+header
+{
+	margin: 77px 0 45px;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	align-items: flex-end;
+    -webkit-justify-content: center;
+	justify-content: center;
+}
+
+header > p
+{
+	margin: 12px 0 17px 4px;
+}
+
+/*::: TextBoxes :::*/
+
+#colorPicker-textboxContainer
+{
+	margin-left: 8px;
+}
+
+input
+{
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	outline: 0;
+	background-clip: padding-box;
+	border: 1px solid rgba(0,0,0,.15);
+	background-color: rgba(255,255,255,.8);
+	margin: 0;
+	padding: 2px 4px 3px;
+	width: 50px;
+}
+
+input:focus
+{
+	background-color: #fff;
+	border-color: #000;
+}
+
+#downloadFilePopup
+{
+	width: 550px;
+}
+
+.justify
+{
+	text-align: justify;
+}
+
+.close-button
+{
+	margin-top: 6px;
+	float: right;
+}
+
+.close-button:hover
+{
+	background-color: rgba(255,255,255,.15);
+}
+
+.close-button:hover:active
+{
+	background-color: rgba(255,255,255,.30);
+}
+
+a
+{
+	color: #fff;
+}
+
+.checkbox
+{
+	background-color: transparent;
+	outline: none;
+	border: 0;
+	font-size: 12pt;
+	font-family: "Segoe UI Light";
+}
+
+.checkbox::before
+{
+	content: "";
+	display: block;
+	height: 20px;
+	width: 20px;
+	float: left;
+	background: transparent;
+	border: 2px solid #E0E0E0;
+	margin: 0 4px 0 0;
+}
+
+.checkbox[checked="true"]::before
+{
+	background: url(resources/check-small-inverted.png) center center no-repeat;
+}
+
+.center-vertical
+{
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	align-items: flex-start;
+	margin: 8px 0;
+}

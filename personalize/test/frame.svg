@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" height="200px" width="300px" shape-rendering="crispEdges" text-rendering="auto">
+	<rect height="198px" width="298px" y="1" stroke="#0078D7" stroke-width="1px" fill="#fff"/>
+	<rect height="198px" width="100px" y="1" fill="rgb(37,57,61)"/>
+	
+	<g >
+		<text x="10" y="16" font-family="Segoe UI" font-size="9" fill="#fff">Accent color</text>
+		<rect fill="rgba(255,255,255,.1)" height="25" width="100"/>
+	</g>
+	
+		<g >
+		<text x="110" y="16" font-family="Segoe UI" font-size="9" fill="rgb(198,203,203)">Accent color</text>
+	</g>
+	
+	<g id="colors">
+		<rect y="25" x="110" fill="#DC4FAD" height="15" width="15" />
+		<rect y="25" x="125" fill="#AC193D" height="15" width="15" />
+		<rect y="25" x="140" fill="#D24726" height="15" width="15" />
+		<rect y="25" x="155" fill="#FF8F32" height="15" width="15" />
+		<rect y="25" x="170" fill="#82BA00" height="15" width="15" />
+		<rect y="25" x="185" fill="#008A17" height="15" width="15" />
+		<rect y="25" x="200" fill="#03B3B2" height="15" width="15" />
+		<rect y="25" x="215" fill="#008298" height="15" width="15" />
+		<rect y="25" x="230" fill="#5DB2FF" height="15" width="15" />
+		<rect y="25" x="245" fill="#0072C6" height="15" width="15" />
+		<rect y="25" x="260" fill="#4617B4" height="15" width="15" />
+		<rect y="25" x="275" fill="#8C0095" height="15" width="15" />
+	</g>
+	
+	<g>
+	<rect height="20px" width="50px" fill="#ccc" x="240px" y="170px"/>
+		<text font-family="Segoe UI" font-size="8" x="260px" y="183" fill="#000">OK</text>
+	</g>
+</svg>
