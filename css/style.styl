@@ -56,17 +56,6 @@ centerItem() {
   }
 }
 
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 // General Styles
 ::selection {
   color: white;
@@ -92,10 +81,6 @@ body {
   font-weight: 300;
   background-color: #000;
   color: #fff;
-  overflow: hidden;
-}
-
-.noScroll {
   overflow: hidden;
 }
 
@@ -154,6 +139,7 @@ nav {
   h1, div {
     flex: 1;
   }
+
   h1 {
     font-size: 1.2rem;
   }
@@ -175,7 +161,7 @@ nav {
 }
 
 .shrink {
-  opacity: 0;
+  hidden();
   transform: scale(.9);
 }
 
@@ -185,12 +171,32 @@ nav {
 
   .button {
     cursor: pointer;
-    display: inline-block
+    display: inline-block;
     font-size: 1.2rem;
     text-transform: uppercase;
     border: 1px solid white10;
     padding: 1rem 2rem;
   }
+}
+
+.flash {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      z-index: 0;
+      transition();
+      content: "";
+      centerItem();
+      top: 0;
+      fullWidth();
+      background-color: white05;
+      transform: translate(-50%, -100%);
+    }
+
+    &:hover:after {
+      transform: translate(-50%, 100%);
+    }
 }
 
 .content {
@@ -230,7 +236,7 @@ nav {
   .tooltip-container {
 
   .tooltip {
-      visibility: hidden;
+      hidden();
       color: white25;
       position: absolute;
       top: 0;
@@ -239,7 +245,6 @@ nav {
       height: 100%;
       background-color: white05;
       z-index: -1;
-      opacity: 0;
       transition();
 
       span img {
@@ -251,8 +256,7 @@ nav {
   }
 
   &:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
+    visible();
     right: 100%;
   }
 }
@@ -282,7 +286,7 @@ nav {
   fullWidth();
   transform: scale(1.1);
   hidden();
-  transition: 2s all transitionTiming;
+  transition: 2s all ease;
 
   &.open {
     visible();
@@ -293,7 +297,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    visibility: hidden;
+    hidden();
     z-index: 2;
   }
 }
@@ -302,8 +306,7 @@ iframe {
   centerItem();
   position: fixed;
   transition: 2s all ease;
-  opacity: 0;
-  visibility: hidden;
+  hidden();
   z-index: 3;
   width: 1280px;
   height: 720px;
@@ -328,6 +331,5 @@ iframe {
 }
 
 .open {
-  visibility: visible;
-  opacity: 1;
+  visible();
 }

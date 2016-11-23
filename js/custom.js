@@ -1,4 +1,4 @@
-$('.video, .video-dim, .video-close').click(function(){
+$('.video-toggle, .video-dim, .video-close').click(function(){
   $("iframe").toggleClass('open');
   $(".video-close").toggleClass('open');
   $(".dim").toggleClass('open');
