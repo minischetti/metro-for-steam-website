@@ -99,7 +99,7 @@ function _init()
 function compileStyles()
 {
 	var colors = ["220 79 173","172 25 61","210 71 38","225 143 50","130 186 0","0 138 23","3 179 178","0 130 153","93 178 255","0 114 198","70 23 180","140 0 149"];
-	var decals = ['8="image( x1 - 821, y1 - 375, x1, y1, graphics/decal_steam_btmr)"', '1="image( x1 - 186, y0+40, x1, y0-176, graphics/backgrounds/1)"', '2="image( x1 - 900, y1 - 194, x1, y1, graphics/backgrounds/2)"','3="image( x1 - 603, y1 - 231, x1, y1, graphics/backgrounds/3)"','4="image( x1 - 506, y0+43, x1, y0-298, graphics/backgrounds/4)"','5="image( x1 - 684, y0+40, x1, y0-194, graphics/backgrounds/5_top)" 6=""image( x1 - 508, y1 - 103, x1, y1, graphics/backgrounds/5_bot_sm)"','7="image( x1 - 688, y0+81, x1, y0-259, graphics/backgrounds/6)"',''];
+	var decals = ['8="image( x1 - 821, y1 - 375, x1, y1, graphics/decal_steam_btmr)"', '1="image( x1 - 186, y0+40, x1, y0-176, graphics/backgrounds/1)"', '2="image( x1 - 900, y1 - 194, x1, y1, graphics/backgrounds/2)"','3="image( x1 - 603, y1 - 231, x1, y1, graphics/backgrounds/3)"','4="image( x1 - 506, y0+43, x1, y0-298, graphics/backgrounds/4)"','5="image( x1 - 684, y0+40, x1, y0-194, graphics/backgrounds/5_top)"','6="image( x1 - 508, y1 - 103, x1, y1, graphics/backgrounds/5_bot_sm)"','7="image( x1 - 688, y0+81, x1, y0-259, graphics/backgrounds/6)"',''];
 
 	var out_color;
 	var color_pickerRGB = picker.getRGB();
