@@ -12,6 +12,18 @@
   font-family: 'Poppins';
   src: local('Poppins Light'), local('Poppins-Light'), url("../fonts/Poppins.woff2") format('woff2'), url("../fonts/Poppins") format('woff');
 }
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  width: 0 !important;
+  height: 0 !important;
+}
+.visible {
+  opacity: 1;
+  visibility: visible;
+  width: 100% !important;
+  height: 100% !important;
+}
 ::selection {
   color: #fff;
   background-color: #6624e2;
@@ -313,16 +325,8 @@ iframe {
 }
 .personalize-container {
   display: flex;
-  position: fixed;
   flex-direction: column;
   justify-content: center;
-  background-color: #000;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: scale(1.1);
   transition: 0.25s all ease;
 }
 .personalize-container.open {

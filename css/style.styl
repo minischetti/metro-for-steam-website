@@ -41,9 +41,23 @@ hidden() {
   visibility: hidden;
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 visible() {
   opacity: 1;
   visibility: visible;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 noSelect() {
@@ -401,15 +415,8 @@ iframe {
 
 .personalize-container {
   display: flex;
-  position: fixed;
   flex-direction: column;
   justify-content: center;
-  background-color: #000;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  fullWidth();
-  transform: scale(1.1);
   transition: 2s all ease;
 
   &.open {
