@@ -20,6 +20,12 @@
   opacity: 1;
   visibility: visible;
 }
+#personalize-toggle,
+.button,
+.action,
+.label {
+  cursor: pointer;
+}
 ::selection {
   color: #fff;
   background-color: #6624e2;
@@ -96,9 +102,9 @@ nav,
 }
 nav {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 12rem);
   height: 8rem;
-  padding: 0 14rem 0 2rem;
+  padding: 0 2rem 0 2rem;
   justify-content: space-between;
   z-index: 3;
 }
@@ -133,7 +139,6 @@ nav .icon-container {
   height: 100%;
 }
 .section .button {
-  cursor: pointer;
   display: inline-block;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -178,7 +183,6 @@ nav .icon-container {
   font-size: 1.2rem;
   flex-direction: column;
   background-color: #000;
-  z-index: 4;
 }
 .sidebar .item {
   width: 100%;
@@ -190,7 +194,6 @@ nav .icon-container {
 }
 .sidebar .label {
   position: relative;
-  cursor: pointer;
 }
 .sidebar .tooltip-container .tooltip {
   opacity: 0;
@@ -229,7 +232,7 @@ nav .icon-container {
 }
 .video-container {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
@@ -238,6 +241,7 @@ nav .icon-container {
   opacity: 0;
   visibility: hidden;
   transition: 0.25s all ease;
+  background-color: #000;
 }
 .video-container.open {
   opacity: 1;
@@ -266,7 +270,6 @@ iframe {
   height: 720px;
 }
 .action {
-  cursor: pointer;
   position: absolute;
   right: 0;
   width: 12rem;
@@ -280,6 +283,7 @@ iframe {
   border: 1px solid rgba(255,255,255,0.1);
   border-top: 0;
   border-right: 0;
+  z-index: 1;
 }
 .open {
   opacity: 1;
@@ -326,6 +330,8 @@ iframe {
   width: 100%;
   height: 100%;
   transition: 0.25s all ease;
+  transform: scale(1.1);
+  z-index: 1;
 }
 .personalize-container .section {
   margin-right: 12rem;

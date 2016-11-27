@@ -85,6 +85,9 @@ centerItem() {
 }
 
 // General Styles
+#personalize-toggle, .button, .action, .label {
+  cursor: pointer;
+}
 ::selection {
   color: white;
   background-color: accent;
@@ -159,9 +162,9 @@ nav, .sidebar {
 
 nav {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 12rem);
   height: 8rem;
-  padding: 0 14rem 0 2rem;
+  padding: 0 2rem 0 2rem;
   justify-content: space-between;
   z-index: 3;
 
@@ -200,7 +203,6 @@ nav {
   fullWidth();
 
   .button {
-    cursor: pointer;
     display: inline-block;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -248,7 +250,6 @@ nav {
   font-size: 1.2rem;
   flex-direction: column;
   background-color: #000;
-  z-index: 4;
 
   .item {
     width: 100%;
@@ -261,7 +262,6 @@ nav {
 
   .label {
     position: relative;
-    cursor: pointer;
   }
 
   .tooltip-container {
@@ -311,13 +311,14 @@ nav {
 
 .video-container {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   fullWidth();
   transform: scale(1.1);
   hidden();
   transition: 2s all ease;
+  background-color: #000;
 
   &.open {
     visible();
@@ -345,7 +346,6 @@ iframe {
 
 // Video Close Icon
 .action {
-  cursor: pointer;
   position: absolute;
   right: 0;
   width: 12rem;
@@ -359,6 +359,7 @@ iframe {
   border: 1px solid white10;
   border-top: 0;
   border-right: 0;
+  z-index: 1;
 }
 
 .open {
@@ -415,6 +416,8 @@ iframe {
   position: absolute;
   fullWidth();
   transition: 2s all ease;
+  transform: scale(1.1);
+  z-index: 1;
 
   .section {
     margin-right: 12rem;
