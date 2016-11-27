@@ -8,6 +8,24 @@ white10=rgba(255,255,255,.1)
 white25=rgba(255,255,255,.25)
 vendors=official
 
+// Fonts
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.woff') format('woff');
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat Light';
+  src: url('../fonts/Montserrat-Light.woff') format('woff');
+  src: url('../fonts/Montserrat-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Light'), local('Poppins-Light'),
+       url('../fonts/Poppins.woff2') format('woff2'),
+       url('../fonts/Poppins') format('woff');
+}
+
 // Mixins
 transition() {
   transition: .25s all ease;
@@ -377,6 +395,146 @@ iframe {
 
     img {
       display: none;
+    }
+  }
+}
+
+.personalize-container {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #000;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  fullWidth();
+  transform: scale(1.1);
+  transition: 2s all ease;
+
+  &.open {
+    visible();
+    transform: scale(1);
+  }
+
+  .dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    hidden();
+    z-index: 2;
+  }
+}
+
+.list {
+    box-sizing: border-box;
+    font-family: Montserrat Light;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+
+    .fonts {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    span {
+      line-height: 4rem;
+    }
+}
+
+.row {
+  display: flex;
+  position: relative;
+  margin: 0 auto 2rem;
+
+  &:after {
+    position: absolute;
+    font-family: 'Montserrat Light';
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1.4rem;
+    line-height: 4rem;
+    text-align: right;
+    top: 0;
+    left: -10rem;
+    width: 9rem;
+    height: 100%;
+    padding-right: 1rem;
+    box-sizing: border-box;
+
+    .color& {
+      content: "Color";
+    }
+
+    .decal& {
+      content: "Decal";
+    }
+
+    .list& {
+      content: "Font";
+    }
+
+    .grid& {
+      content: "Grid View";
+    }
+  }
+
+  &.list {
+    width: 4*8rem + 7*1rem;
+    height: 20rem;
+    background-color: white05;
+  }
+
+  &.grid {
+    font-family: Montserrat Light;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    flex-direction: column;
+
+    .option {
+      display: flex;
+      width: 4*8rem + 7*1rem;
+      height: 4rem;
+      line-height: 4rem;
+      margin-bottom: 1rem;
+      color: white10;
+
+      .check {
+        display: flex;
+        width: 4rem;
+        height: 4rem;
+        margin-right: 2rem;
+        border: 1px solid white10;
+
+        img {
+          width: 18px;
+          hidden();
+          margin: auto;
+        }
+      }
+
+      &.enabled {
+        &.option {
+          color: white;
+
+          img {
+            visible();
+          }
+        }
+      }
+    }
+  }
+
+  .swatch {
+    width: 4rem;
+    height: 4rem;
+    background-color: red;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
