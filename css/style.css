@@ -15,14 +15,10 @@
 .hidden {
   opacity: 0;
   visibility: hidden;
-  width: 0 !important;
-  height: 0 !important;
 }
 .visible {
   opacity: 1;
   visibility: visible;
-  width: 100% !important;
-  height: 100% !important;
 }
 ::selection {
   color: #fff;
@@ -102,8 +98,9 @@ nav {
   position: absolute;
   width: 100%;
   height: 8rem;
-  padding: 0 2rem;
+  padding: 0 14rem 0 2rem;
   justify-content: space-between;
+  z-index: 3;
 }
 nav h1,
 nav div {
@@ -181,6 +178,7 @@ nav .icon-container {
   font-size: 1.2rem;
   flex-direction: column;
   background-color: #000;
+  z-index: 4;
 }
 .sidebar .item {
   width: 100%;
@@ -267,7 +265,7 @@ iframe {
   width: 1280px;
   height: 720px;
 }
-.video-close {
+.action {
   cursor: pointer;
   position: absolute;
   right: 0;
@@ -324,10 +322,16 @@ iframe {
   }
 }
 .personalize-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.25s all ease;
+}
+.personalize-container .section {
+  margin-right: 12rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 0.25s all ease;
 }
 .personalize-container.open {
   opacity: 1;
