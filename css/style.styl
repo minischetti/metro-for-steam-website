@@ -83,6 +83,20 @@ centerItem() {
     transform: scale(1.1);
   }
 }
+@keyframes tooltipTeaser {
+  0% {
+  }
+  25% {
+    visible();
+    right: 100%;
+  }
+  75% {
+    visible();
+    right: 100%;
+  }
+  0% {
+  }
+}
 
 // General Styles
 #personalize-toggle, .button, .action, .label {
@@ -116,7 +130,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat Light', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -173,6 +187,7 @@ nav {
   }
 
   h1 {
+    noSelect();
     font-size: 1.2rem;
   }
 
@@ -267,6 +282,7 @@ nav {
   .tooltip-container {
 
   .tooltip {
+      animation: 4s tooltipTeaser ease;
       hidden();
       color: white25;
       position: absolute;
@@ -293,7 +309,7 @@ nav {
 }
 
   .important {
-    font-weight: 600;
+    font-family: 'Montserrat Light', sans-serif;
     color: accent;
     border-bottom: 1px solid white10;
   }
@@ -444,7 +460,7 @@ iframe {
 
 .list {
     box-sizing: border-box;
-    font-family: Montserrat Light;
+    font-family: 'Montserrat Light';
     text-transform: uppercase;
     font-size: 1.4rem;
     padding: 0 2rem;
@@ -504,7 +520,7 @@ iframe {
   }
 
   &.grid {
-    font-family: Montserrat Light;
+    font-family: 'Montserrat Light';
     text-transform: uppercase;
     font-size: 1.4rem;
     flex-direction: column;
@@ -544,10 +560,19 @@ iframe {
   }
 
   .swatch {
+    -webkit-appearance: none;
     width: 4rem;
     height: 4rem;
     background-color: red;
-    margin-right: 1rem;
+    margin: 0 1rem 0 0;
+
+    &:checked, &:active, &:focus {
+      outline: 0;
+    }
+
+    &:checked {
+      opacity: .5;
+    }
 
     &:last-child {
       margin-right: 0;
