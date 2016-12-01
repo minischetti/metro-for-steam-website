@@ -281,8 +281,7 @@ nav {
   }
 
   .tooltip-container {
-
-  .tooltip {
+    .tooltip {
       animation: 4s tooltipTeaser ease;
       hidden();
       color: white25;
@@ -300,18 +299,17 @@ nav {
         vertical-align: sub;
         margin: 0 .75rem;
       }
+    }
 
+    &:hover .tooltip {
+      visible();
+      right: 100%;
+    }
   }
-
-  &:hover .tooltip {
-    visible();
-    right: 100%;
-  }
-}
 
   .important {
-    font-family: 'Montserrat Light', sans-serif;
     color: accent;
+    font-weight: 600;
     border-bottom: 1px solid white10;
   }
 
