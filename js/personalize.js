@@ -1,15 +1,24 @@
-$('.color').click(function selectColor(){
-  //Store Color as variable
+//Retrieve local storage
+$(".action, .important").css('color', localStorage.getItem(".action, .important"));
+
+//Color option function
+$('.swatch').click(function selectColor(){
+  //Store color as variable
   color = $('input[name=color]:checked', '.color').val().split(",");
 
-  //Do we need local storage for this?
-  //localStorage.setItem('accentColor',color);
-  //console.log(color);
-
-  //Output Stylesheet with options
+  //Output stylesheet with options
   outString = '"custom.styles"{colors{Focus="' + color[0] + '"}};'
 
   //Set up download link
   $('#save').attr('href','data:text/plain;charset=utf-8;base64,' + btoa(outString));
-  $(".important, .action").css('color', color[1]);
+
+  //Change website color
+  $(".action, .important").css('color', color[1]);
+
+  //Set chosen color as variable for localStorage
+  accentColor = $(".action, .important").css('color');
+  selectedColor = $('input[name=color]:checked');
+
+  //Set localStorage based on chosen color
+  localStorage.setItem(".action, .important", accentColor);
 });
