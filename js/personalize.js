@@ -1,5 +1,16 @@
-//Retrieve local storage
-$(".action, .important").css('color', localStorage.getItem(".action, .important"));
+storedColor = localStorage.getItem("storedColor");
+colorHex = localStorage.getItem("colorHex");
+
+//Color site based on previously selected accent color
+$(".action, .important").css('color', colorHex);
+
+//Color each swatch based on value
+$(".swatch").each(function (){
+  this.style.backgroundColor = $(this).val().split(",")[1];
+});
+
+//Retrieve local storage and check in previously selected color
+$('input[value="' + storedColor + '"]').prop( "checked", true );
 
 //Color option function
 $('.swatch').click(function selectColor(){
@@ -15,10 +26,7 @@ $('.swatch').click(function selectColor(){
   //Change website color
   $(".action, .important").css('color', color[1]);
 
-  //Set chosen color as variable for localStorage
-  accentColor = $(".action, .important").css('color');
-  selectedColor = $('input[name=color]:checked');
-
   //Set localStorage based on chosen color
-  localStorage.setItem(".action, .important", accentColor);
+  localStorage.setItem("storedColor", color);
+  localStorage.setItem("colorHex", color[1]);
 });
