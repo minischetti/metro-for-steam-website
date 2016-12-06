@@ -99,7 +99,7 @@ centerItem() {
 }
 
 // General Styles
-#personalize-toggle, .button, .action, .label {
+#personalize-toggle, .button, .action, .label, .swatch {
   cursor: pointer;
 }
 ::selection {
@@ -226,7 +226,7 @@ nav {
   }
 }
 
-.flash {
+.flash, .swatch {
     position: relative;
     overflow: hidden;
 
@@ -575,7 +575,12 @@ iframe {
       outline: 0;
     }
 
-    &:checked {
+    &:checked::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      fullWidth();
       background: url("../assets/check.svg") center no-repeat;
     }
 
