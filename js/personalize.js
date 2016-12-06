@@ -2,8 +2,12 @@
 colorSwatch = "input[name=color]";
 decalSwatch = "input[name=decal]";
 
+//localStorage
 storedColor = localStorage.getItem("storedColor");
 colorHex = localStorage.getItem("colorHex");
+
+storedDecal = localStorage.getItem("storedDecal");
+decalBackground = localStorage.getItem("decalBackground");
 
 //Color site based on previously selected accent color
 $(".action, .important").css('color', colorHex);
@@ -24,7 +28,8 @@ $(colorSwatch).each(function (){
 //
 
 //Retrieve local storage and check in previously selected color
-$('input[value="' + storedColor + '"]').prop( "checked", true );
+$('input[name=color][value*="' + storedColor + '"]').prop( "checked", true );
+$('input[name=decal][value*="' + storedDecal + '"]').prop( "checked", true );
 
 //
 //
@@ -53,8 +58,9 @@ $(colorSwatch).click(function selectColor(){
   $(".action, .important").css('color', color[1]);
 
   //Set localStorage based on chosen color
-  localStorage.setItem("storedColor", color);
+  localStorage.setItem("storedColor", color[0]);
   localStorage.setItem("colorHex", color[1]);
+  console.log(color);
 });
 
 //
@@ -62,9 +68,7 @@ $(colorSwatch).click(function selectColor(){
 //
 //
 
-storedDecal = localStorage.getItem("storedDecal");
-decalBackground = localStorage.getItem("decalBackground");
-
+//Set decal background images
 $(decalSwatch).each(function (){
   this.style.backgroundImage = $(this).val().split("|")[1];
 });
@@ -78,7 +82,7 @@ $(decalSwatch).click(function selectDecal(){
   decal = $(decalSwatch + ':checked').val().split("|");
 
   //Set localStorage based on chosen color
-  localStorage.setItem("storedDecal", decal);
+  localStorage.setItem("storedDecal", decal[1]);
   localStorage.setItem("decalBackground", decal[1]);
   console.log(decal);
 });
@@ -90,7 +94,7 @@ $(decalSwatch).click(function selectDecal(){
 
 //Create stylesheet
 $(function exportStyle(){
-  outString = '"custom.styles"{colors{Focus="' + storedColor + '"}};'
+  outString = '"custom.styles"\n{\ncolors\n{\nFocus="' + storedColor + '"\n}\n}'
   //Set up download link
   $('#save').attr('href','data:text/plain;charset=utf-8;base64,' + btoa(outString));
 }
