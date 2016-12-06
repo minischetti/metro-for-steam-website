@@ -12,16 +12,18 @@ $(".swatch").each(function (){
 //Retrieve local storage and check in previously selected color
 $('input[value="' + storedColor + '"]').prop( "checked", true );
 
+//If localStorage is empty (nothing is selected), disable the save button
+if (localStorage.getItem("storedColor") === null) {
+  $('#save').addClass("disabled");
+}
+
 //Color option function
 $('.swatch').click(function selectColor(){
+  //Enable save button
+  $('#save').removeClass("disabled");
+
   //Store color as variable
   color = $('input[name=color]:checked', '.color').val().split(",");
-
-  //Output stylesheet with options
-  outString = '"custom.styles"{colors{Focus="' + color[0] + '"}};'
-
-  //Set up download link
-  $('#save').attr('href','data:text/plain;charset=utf-8;base64,' + btoa(outString));
 
   //Change website color
   $(".action, .important").css('color', color[1]);
@@ -30,3 +32,11 @@ $('.swatch').click(function selectColor(){
   localStorage.setItem("storedColor", color);
   localStorage.setItem("colorHex", color[1]);
 });
+
+//Create stylesheet
+$(function exportStyle(){
+  outString = '"custom.styles"{colors{Focus="' + storedColor + '"}};'
+  //Set up download link
+  $('#save').attr('href','data:text/plain;charset=utf-8;base64,' + btoa(outString));
+}
+);

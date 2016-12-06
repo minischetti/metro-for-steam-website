@@ -376,6 +376,11 @@ iframe {
   border-right: 0;
   z-index: 3;
   background-color: #000;
+
+  &.disabled {
+    noSelect();
+    color: alpha(accent, 0.5);
+  }
 }
 
 .open {
@@ -559,6 +564,7 @@ iframe {
   }
 
   .swatch {
+    transition: 1s all;
     -webkit-appearance: none;
     width: 4rem;
     height: 4rem;
