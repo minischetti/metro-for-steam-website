@@ -6,7 +6,6 @@ fontSwatch = "input[name=font]";
 //localStorage
 webColor = localStorage.getItem("webColor");
 webDecal = localStorage.getItem("webDecal");
-
 //Color site based on previously selected accent color
 $(".action, .important").css('color', webColor);
 
@@ -57,13 +56,13 @@ $(colorSwatch).click(function selectColor(){
 
   //Store color as variable
   color = $(colorSwatch + ':checked').val().split(",");
-  steamColor = color[0];
 
   //Change website color
   $(".action, .important").css('color', color[1]);
 
   //Set localStorage based on chosen color
   localStorage.setItem("webColor", color[1]);
+  localStorage.setItem("steamColor", color[0]);
   console.log(color[0]);
   console.log(steamColor);
 });
@@ -79,10 +78,10 @@ $(decalSwatch).click(function selectDecal(){
 
   //Store color as variable
   decal = $(decalSwatch + ':checked').val().split("|");
-  steamDecal = decal[0];
 
   //Set localStorage based on chosen decal
   localStorage.setItem("webDecal", decal[1]);
+  localStorage.setItem("steamDecal", decal[0]);
   console.log(decal[0]);
 });
 
@@ -91,10 +90,11 @@ $(decalSwatch).click(function selectDecal(){
 //
 //
 
+$('#save').click(function exportStyle(){
+  steamColor = localStorage.getItem("steamColor");
+  steamDecal = localStorage.getItem("steamDecal");
 //Create stylesheet
-$(function exportStyle(){
   outString = '"custom.styles"\n{\ncolors\n{\nFocus="' + steamColor + ' 255"\n}\nstyles\n{\nCSteamRootDialog\n{\nrender_bg\n{\n' + steamDecal + '\n}\n}\n}\n}'
   //Set up download link
   $('#save').attr('href','data:text/plain;charset=utf-8;base64,' + btoa(outString));
-}
-);
+});
