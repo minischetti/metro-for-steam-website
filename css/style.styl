@@ -538,16 +538,35 @@ iframe {
       margin-bottom: 1rem;
       color: white10;
 
+        span {
+          transition();
+        }
+
         input {
+          position: relative;
           -webkit-appearance: none;
           display: flex;
           width: 4rem;
           height: 4rem;
-          margin-right: 2rem;
+          margin: 0 2rem 0;
           border: 1px solid white10;
 
-          &:checked {
+          &:after {
+            transition();
+            content: '';
             background: url("../assets/check.svg") center no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            hidden();
+          }
+
+          &:checked:after {
+            top: 50%;
+            visible();
           }
 
           &:checked ~ span {
@@ -574,13 +593,20 @@ iframe {
     outline: 0;
   }
 
-  &:checked:before {
-    content: '';
+  &:before {
+    hidden();
+    transition();
     position: absolute;
-    top: 0;
+    top: -25%;
     left: 0;
+    content: '';
     fullWidth();
     background: url("../assets/check.svg") center no-repeat;
+  }
+
+  &:checked:before {
+    top: 0;
+    visible();
   }
 
   &:last-child {
