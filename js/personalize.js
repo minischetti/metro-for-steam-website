@@ -6,9 +6,13 @@ fontSwatch = "input[name=font]";
 //localStorage
 webColor = localStorage.getItem("webColor");
 webDecal = localStorage.getItem("webDecal");
+
 //Color site based on previously selected accent color
 $(".action, .important").css('color', webColor);
 
+//Retrieve local storage and check in previously selected color
+$('input[name=color][value*="' + webColor + '"]').prop( "checked", true );
+$('input[name=decal][value*="' + webDecal + '"]').prop( "checked", true );
 //
 //
 //
@@ -29,9 +33,6 @@ $(decalSwatch).each(function (){
 //
 //
 
-//Retrieve local storage and check in previously selected color
-$('input[name=color][value*="' + webColor + '"]').prop( "checked", true );
-$('input[name=decal][value*="' + webDecal + '"]').prop( "checked", true );
 
 //
 //
@@ -85,6 +86,15 @@ $(decalSwatch).click(function selectDecal(){
   console.log(decal[0]);
 });
 
+$("input[name=grid]").click(function gridSettings() {
+  //Enable save button
+  $('#save').removeClass("disabled");
+  gridOptions = $('input[name=grid]' + ':checked').val();
+
+  localStorage.setItem("gridOptions", gridOptions);
+  console.log(gridOptions);
+});
+
 //
 //
 //
@@ -93,8 +103,9 @@ $(decalSwatch).click(function selectDecal(){
 $('#save').click(function exportStyle(){
   steamColor = localStorage.getItem("steamColor");
   steamDecal = localStorage.getItem("steamDecal");
+  gridDim = localStorage.getItem("gridOptions");
 //Create stylesheet
-  outString = '"custom.styles"\n{\ncolors\n{\nFocus="' + steamColor + ' 255"\n}\nstyles\n{\nCSteamRootDialog\n{\nrender_bg\n{\n' + steamDecal + '\n}\n}\n}\n}'
+  outString = '"custom.styles"\n{\ncolors\n{\nFocus="' + steamColor + ' 255"\n}\nstyles\n{\nCSteamRootDialog\n{\nrender_bg\n{\n' + steamDecal + '\n}\n}\n}\n' + gridOption + '}'
   //Set up download link
   $('#save').attr('href','data:text/plain;charset=utf-8;base64,' + btoa(outString));
 });
