@@ -33,28 +33,8 @@ $(decalSwatch).each(function (){
 //
 //
 
-
-//
-//
-//
-//
-
-//If localStorage is empty (nothing is selected), disable the save button
-if (localStorage.getItem("steamColor") === null) {
-  $('#save').addClass("disabled");
-}
-
-//
-//
-//
-//
-
-
 //Color option function
 $(colorSwatch).click(function selectColor(){
-  //Enable save button
-  $('#save').removeClass("disabled");
-
   //Store color as variable
   color = $(colorSwatch + ':checked').val().split(",");
 
@@ -74,8 +54,6 @@ $(colorSwatch).click(function selectColor(){
 
 //Decal option function
 $(decalSwatch).click(function selectDecal(){
-  //Enable save button
-  $('#save').removeClass("disabled");
 
   //Store color as variable
   decal = $(decalSwatch + ':checked').val().split("|");
@@ -85,7 +63,7 @@ $(decalSwatch).click(function selectDecal(){
   localStorage.setItem("steamDecal", decal[0]);
   console.log(decal[0]);
 });
-
+/*
 $("input[name=grid]").click(function gridSettings() {
   //Enable save button
   $('#save').removeClass("disabled");
@@ -93,6 +71,14 @@ $("input[name=grid]").click(function gridSettings() {
 
   localStorage.setItem("gridOptions", gridOptions);
   console.log(gridOptions);
+});
+*/
+
+$("input[name=grid]").click(function() {
+
+$('input[name=grid]:checked').map(function mapGrid() {
+    return this.value;
+}).get().join();
 });
 
 //
@@ -104,6 +90,7 @@ $('#save').click(function exportStyle(){
   steamColor = localStorage.getItem("steamColor");
   steamDecal = localStorage.getItem("steamDecal");
   gridDim = localStorage.getItem("gridOptions");
+  newMap = new Map(mapGrid);
 //Create stylesheet
   outString = '"custom.styles"\n{\ncolors\n{\nFocus="' + steamColor + ' 255"\n}\nstyles\n{\nCSteamRootDialog\n{\nrender_bg\n{\n' + steamDecal + '\n}\n}\n}\n' + gridOption + '}'
   //Set up download link
