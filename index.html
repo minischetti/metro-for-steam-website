@@ -11,6 +11,7 @@
     <link rel="icon" href="assets/favicon.png" type="image/png">
   </head>
   <body>
+    <div class="background-image"></div>
     <nav>
       <h1>Metro</h1>
       <div>
@@ -39,13 +40,13 @@
         </form>
         <div class="row decal">
           <input checked type="radio" name="decal" class="swatch" value="0='image(x1-821,y1-375,x1,y1,graphics/decal_steam_btmr)'|url('assets/decals/0.png')"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-186,y0+40,x1,y0-176,graphics/backgrounds/1)'|url('assets/decals/1.png')"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-900,y1-194,x1,y1,graphics/backgrounds/2)'|url('assets/decals/2.png')"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-603,y1-231,x1,y1,graphics/backgrounds/3)'|url('assets/decals/3.png')"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-506,y0+43,x1,y0-298,graphics/backgrounds/4)'|url('assets/decals/4.png')"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-684,y0+40,x1,y0-194,graphics/backgrounds/5_top)'|url('assets/decals/5.png')"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-508,y1-103,x1,y1,graphics/backgrounds/5_bot_sm)'|url('assets/decals/6.png')"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-688,y0+81,x1,y0-259,graphics/backgrounds/6)'|url('assets/decals/7.png')"></input>
+          <input type="radio" name="decal" class="swatch" value="0='image(x1-186,y0+40,x1,y0-176,graphics/backgrounds/1)'|url('assets/decals/1.png')|url('assets/decals/full/1.png')|top right"></input>
+          <input type="radio" name="decal" class="swatch" value="0='image(x1-900,y1-194,x1,y1,graphics/backgrounds/2)'|url('assets/decals/2.png')|url('assets/decals/full/2.png')|bottom right"></input>
+          <input type="radio" name="decal" class="swatch" value="0='image(x1-603,y1-231,x1,y1,graphics/backgrounds/3)'|url('assets/decals/3.png')|url('assets/decals/full/3.png')|bottom right"></input>
+          <input type="radio" name="decal" class="swatch" value="0='image(x1-506,y0+43,x1,y0-298,graphics/backgrounds/4)'|url('assets/decals/4.png')|url('assets/decals/full/4.png')|top right"></input>
+          <input type="radio" name="decal" class="swatch" value="0='image(x1-684,y0+40,x1,y0-194,graphics/backgrounds/5_top)'|url('assets/decals/5.png')|url('assets/decals/full/5_bot_sm.png')|bottom right"></input>
+          <input type="radio" name="decal" class="swatch" value="0='image(x1-508,y1-103,x1,y1,graphics/backgrounds/5_bot_sm)'|url('assets/decals/6.png')|url('assets/decals/full/6.png')|top right"></input>
+          <input type="radio" name="decal" class="swatch" value="0='image(x1-688,y0+81,x1,y0-259,graphics/backgrounds/6)'|url('assets/decals/7.png')|url('assets/decals/full/5_top.png')|top right"></input>
         </div>
         <div class="row list">
           <div class="fonts">
@@ -59,11 +60,11 @@
         </div>
         <div class="row grid">
           <div class="option">
-            <input type="checkbox" name="grid" value="indicator"></input>
+            <input  id="indicator" type="checkbox" name="grid" value='"GameItem_Uninstalled"{render{0="image(x1-18,y1-26,x1,y1,graphics/metro/icons/grid_uninstalled)"}}|indicator'></input>
             <span>Display Download Indicator</span>
           </div>
           <div class="option">
-            <input type="checkbox" name="grid" value="dim"></input>
+            <input id="dim" type="checkbox" name="grid" value='"GameItem_Uninstalled GGPlaceholderBG"{alpha 89.25} "GameItem_Uninstalled GamesGridImage"{alpha 89.25}|dim'></input>
             <span>Dim Uninstalled Artwork</span>
           </div>
         </div>
