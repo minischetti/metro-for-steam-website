@@ -99,9 +99,10 @@ centerItem() {
 }
 
 // General Styles
-#personalize-toggle, .button, .action, .label, .swatch {
+#personalize-toggle, .button, .action, .label, .swatch, .option input {
   cursor: pointer;
 }
+
 ::selection {
   color: white;
   background-color: accent;
@@ -526,7 +527,7 @@ iframe {
   }
 
   &.list {
-    width: 4*8rem + 7*1rem;
+    width: 4*9rem + 8*1rem;
     height: 20rem;
     background-color: white05;
   }
@@ -540,7 +541,7 @@ iframe {
     .option {
       position: relative;
       display: flex;
-      width: 4*8rem + 7*1rem;
+      width: 4*9rem + 8*1rem;
       height: 4rem;
       line-height: 4rem;
       margin-bottom: 1rem;
@@ -594,7 +595,7 @@ iframe {
   -webkit-appearance: none;
   width: 4rem;
   height: 4rem;
-  background-color: red;
+  background-color: white05;
   margin: 0 1rem 0 0;
 
   &:checked, &:active, &:focus {
