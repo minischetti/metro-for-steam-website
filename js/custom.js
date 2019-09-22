@@ -5,7 +5,9 @@ $('.video-toggle, .video-dim').click(function(){
   $(".container").toggleClass('shrink');
 });
 
+/*
 $('#personalize-toggle').click(function(){
   $("#home").toggleClass('shrink');
   $("#personalize").toggleClass('open');
 });
+*/

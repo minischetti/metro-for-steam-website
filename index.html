@@ -9,15 +9,39 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicon.png" type="image/png">
+    <script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-35796782-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-6558198868132040",
+                  enable_page_level_ads: true
+             });
+        </script>
   </head>
   <body>
-    <div class="background-image"></div>
     <nav>
       <h1>Metro</h1>
+      <!--
       <div>
         <span id="personalize-toggle" class="icon-container flash">
           <img class="icon" src="assets/brush.svg"/>
         </span>
+      </div>
+      -->
+      <div>
+        <a href="personalize" id="personalize-toggle" class="icon-container flash">
+          <img class="icon" src="assets/brush.svg"/>
+        </a>
       </div>
     </nav>
     <div class="video-container">
@@ -26,29 +50,27 @@
       <div class="dim"></div>
     </div>
     <div id="personalize" class="personalize-container hidden">
-      <a id="save" class="action flash" download="custom.styles" href="">Save</a>
+      <span class="action flash">Save</span>
       <div class="section">
-        <form class="row color">
-          <input checked type="radio" name="color" class="swatch" value="220 79 173,#DC4FAD"></input>
-          <input type="radio" name="color" class="swatch" value="172 25 61,#AC193D"></input>
-          <input type="radio" name="color" class="swatch" value="210 71 38,#D24726"></input>
-          <input type="radio" name="color" class="swatch" value="225 143 50,#FF8F32"></input>
-          <input type="radio" name="color" class="swatch" value="130 186 0,#82BA00"></input>
-          <input type="radio" name="color" class="swatch" value="0 138 23,#008A17"></input>
-          <input type="radio" name="color" class="swatch" value="3 179 178,#03B3B2"></input>
-          <input type="radio" name="color" class="swatch" value="0 130 153,#008298"></input>
-          <input type="radio" name="color" class="swatch" value=""></input>
-        </form>
+        <div class="row color">
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+        </div>
         <div class="row decal">
-          <input checked type="radio" name="decal" class="swatch" value=""></input>
-          <input checked type="radio" name="decal" class="swatch" value="0='image(x1-821,y1-375,x1,y1,graphics/decal_steam_btmr)'|url('assets/decals/0.png')|url('assets/decals/full/0.png')|bottom right"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-186,y0+40,x1,y0-176,graphics/backgrounds/1)'|url('assets/decals/1.png')|url('assets/decals/full/1.png')|top right"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-900,y1-194,x1,y1,graphics/backgrounds/2)'|url('assets/decals/2.png')|url('assets/decals/full/2.png')|bottom right"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-603,y1-231,x1,y1,graphics/backgrounds/3)'|url('assets/decals/3.png')|url('assets/decals/full/3.png')|bottom right"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-506,y0+43,x1,y0-298,graphics/backgrounds/4)'|url('assets/decals/4.png')|url('assets/decals/full/4.png')|top right"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-684,y0+40,x1,y0-194,graphics/backgrounds/5_top)'|url('assets/decals/5.png')|url('assets/decals/full/5_bot_sm.png')|bottom right"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-508,y1-103,x1,y1,graphics/backgrounds/5_bot_sm)'|url('assets/decals/6.png')|url('assets/decals/full/6.png')|top right"></input>
-          <input type="radio" name="decal" class="swatch" value="0='image(x1-688,y0+81,x1,y0-259,graphics/backgrounds/6)'|url('assets/decals/7.png')|url('assets/decals/full/5_top.png')|top right"></input>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
+          <span class="swatch"></span>
         </div>
         <div class="row list">
           <div class="fonts">
@@ -61,12 +83,16 @@
           </div>
         </div>
         <div class="row grid">
-          <div class="option">
-            <input  id="indicator" type="checkbox" name="grid" value='"GameItem_Uninstalled"{render{0="image(x1-18,y1-26,x1,y1,graphics/metro/icons/grid_uninstalled)"}}|indicator'></input>
-            <span>Display Download Indicator</span>
+          <div class="option enabled">
+            <div class="check">
+              <img src="assets/check.svg"/>
+            </div>
+            <span>Display a Download Indicator</span>
           </div>
           <div class="option">
-            <input id="dim" type="checkbox" name="grid" value='"GameItem_Uninstalled GGPlaceholderBG"{alpha 89.25} "GameItem_Uninstalled GamesGridImage"{alpha 89.25}|dim'></input>
+            <div class="check">
+              <img src="assets/check.svg"/>
+            </div>
             <span>Dim Uninstalled Artwork</span>
           </div>
         </div>
@@ -76,18 +102,14 @@
       <div class="section">
         <div class="content">
           <p>A new look for the platform you already know and love. Metro is fresh and exciting from the moment you open Steam and beyond.</p>
-          <span class="video-toggle button flash">Take a Look</span>
           <img src="assets/downloads.png"/>
         </div>
       </div>
       <div class="sidebar">
-        <a href="downloads/4.2.2.zip" class="item important flash">Download</a>
+        <a href="https://github.com/minischetti/metro-for-steam/archive/v4.4.zip" class="item important flash">Download</a>
         <span class="item label">Connect</span>
-        <a href="https://twitter.com/DomMinischetti" target="_blank" class="item">
+        <a href="https://twitter.com/ThisIsDomDraper" target="_blank" class="item">
           <img class="icon" src="assets/twitter.svg"/>
-        </a>
-        <a href="https://www.youtube.com/user/domminischetti?sub_confirmation=1" target="_blank" class="item">
-          <img class="icon" src="assets/youtube.svg"/>
         </a>
         <a href="http://steamcommunity.com/groups/metroforsteam" target="_blank" class="item">
           <img class="icon" src="assets/steam.svg"/>
@@ -98,19 +120,15 @@
             <span>If you<img src="assets/heart.svg"/>Metro</span>
           </div>
         </div>
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BDL2J3MEETZ3J&lc=US&item_name=Metro%20for%20Steam&item_number=metroforsteam&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" target="_blank" class="item">
-          <img class="icon" src="assets/paypal.svg"/>
+        <a href="https://open.spotify.com/artist/1GlPi96MqVKPUm0Aonkhw1/" target="_blank" class="item">
+          <img class="icon" src="assets/spotify.svg"/>
         </a>
-        <a href="http://www.patreon.com/dommini" target="_blank" class="item">
-          <img class="icon" src="assets/patreon.svg"/>
-        </a>
-        <a href="http://theneutralgoodmusic.com/" target="_blank" class="item">
+        <a href="https://domdraper.bandcamp.com/" target="_blank" class="item">
           <img class="icon" src="assets/bandcamp.svg"/>
         </a>
       </div>
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/personalize.js"></script>
   </body>
 </html>
